@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="restaurant_world">
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Sunlight -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Table 1 -->
+    <model name="table1">
+      <pose>2 2 0</pose>
+      <static>true</static>
+      <link name="table1_link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.8 0.8 0.75</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.8 0.8 0.75</size></box>
+          </geometry>
+          <material><ambient>1 0 0 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Table 2 -->
+    <model name="table2">
+      <pose>2 4 0</pose>
+      <static>true</static>
+      <link name="table2_link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.8 0.8 0.75</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.8 0.8 0.75</size></box>
+          </geometry>
+          <material><ambient>0 1 0 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Table 3 -->
+    <model name="table3">
+      <pose>2 6 0</pose>
+      <static>true</static>
+      <link name="table3_link">
+        <collision name="collision">
+          <geometry>
+            <box><size>0.8 0.8 0.75</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>0.8 0.8 0.75</size></box>
+          </geometry>
+          <material><ambient>0 0 1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Kitchen Area -->
+    <model name="kitchen">
+      <pose>0 5 0</pose>
+      <static>true</static>
+      <link name="kitchen_link">
+        <collision name="collision">
+          <geometry>
+            <box><size>1.5 1.5 0.2</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>1.5 1.5 0.2</size></box>
+          </geometry>
+          <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

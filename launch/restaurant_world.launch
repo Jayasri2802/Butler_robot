@@ -1,0 +1,18 @@
+<launch>
+  <!-- Argument to specify the world file -->
+  <arg name="world_file" default="$(find butler_robot)/worlds/restaurant.world"/>
+
+  <!-- Launch Gazebo with the custom world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_file)"/>
+    <arg name="paused" value="false"/>  <!-- Ensures Gazebo starts running -->
+    <arg name="use_sim_time" value="true"/>
+  </include>
+
+  <!-- Load the robot description -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find butler_robot)/urdf/butler_robot.urdf"/>
+
+  <!-- Spawn the robot in Gazebo -->
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model butler_robot -x 0 -y 0 -z 0.1" />
+</launch>
+
